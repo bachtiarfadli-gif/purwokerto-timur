@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,111 +13,117 @@
   <!-- Global CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <nav class="navbar">
-    <div class="nav-brand fade-left">
-      <strong>Web GIS Desa</strong>
-    </div>
-    <div class="nav-menu fade-right">
-      <a href="index.html">Beranda</a>
-      <a href="map-desa.html">Map Desa</a>
-      <a href="map-kecamatan.html">Map Kecamatan</a>
-      <a href="tentang.html" class="active">Tentang</a>
-    </div>
-  </nav>
-</header>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="nav-brand fade-left">
+        <strong>Web GIS Desa</strong>
+      </div>
+      <div class="nav-menu fade-right">
+        <a href="index.html">Beranda</a>
+        <div class="dropdown">
+          <a href="map-desa.html">Map Desa</a>
+          <div class="dropdown-content">
+            <a href="desa-kranji/index.html">Kranji</a>
+            <a href="desa-pwtlor/index.html">Purwokerto Lor</a>
+            <a href="desa-pwtwetan/index.html">Purwokerto Wetan</a>
+            <a href="desa-sokanegara/index.html">Sokanegara</a>
+          </div>
+        </div>
+        <a href="kecamatan/index.html">Map Kecamatan</a>
+        <a href="tentang.html" class="active">Tentang</a>
+      </div>
+    </nav>
+  </header>
 
-<!-- ================= MAIN ================= -->
-<main class="content">
+  <!-- ================= MAIN ================= -->
+  <main class="content">
 
-  <!-- JUDUL HALAMAN -->
-  <section class="fade-up">
-    <h2>Tentang Pembuat</h2>
-    <p>
-      Halaman ini memuat informasi mengenai pengembang
-      sistem Web GIS Profil Desa dan Kecamatan.
-    </p>
-  </section>
+    <!-- JUDUL HALAMAN -->
+    <section class="fade-up">
+      <h2>Tentang Pembuat</h2>
+      <p>
+        Halaman ini memuat informasi mengenai pengembang
+        sistem Web GIS Profil Desa dan Kecamatan.
+      </p>
+    </section>
 
-  <!-- PROFIL CARD -->
-  <section class="reveal">
-    <div class="menu-card scale-in" style="max-width: 600px; margin: auto; text-align: center;">
+    <!-- PROFIL CARD -->
+    <section class="reveal">
+      <div class="menu-card scale-in" style="max-width: 600px; margin: auto; text-align: center;">
 
-      <img 
-        src="assets/img/WhatsApp Image 2025-12-22 at 12.31.33 AM.jpg"
-        alt="Foto Pembuat"
-        style="
+        <img src="assets/img/WhatsApp Image 2025-12-22 at 12.31.33 AM.jpg" alt="Foto Pembuat" style="
           width:150px;
           height:150px;
           object-fit:cover;
           border-radius:50%;
           margin-bottom:15px;
           box-shadow:0 8px 20px rgba(0,0,0,0.15);
-        "
-      >
+        ">
 
-      <h3>Fadli Bachtiar</h3>
-      <p style="opacity:0.8;">Mahasiswa Sistem Informasi</p>
+        <h3>Fadli Bachtiar</h3>
+        <p style="opacity:0.8;">Mahasiswa Sistem Informasi</p>
 
-      <table class="data-table" style="margin-top:20px;">
-        <tr>
-          <th>NIM</th>
-          <td>23SA21A140</td>
-        </tr>
-        <tr>
-          <th>Kelas</th>
-          <td>SI23C</td>
-        </tr>
-        <tr>
-          <th>Program Studi</th>
-          <td>Sistem Informasi</td>
-        </tr>
-      </table>
+        <table class="data-table" style="margin-top:20px;">
+          <tr>
+            <th>NIM</th>
+            <td>23SA21A140</td>
+          </tr>
+          <tr>
+            <th>Kelas</th>
+            <td>SI23C</td>
+          </tr>
+          <tr>
+            <th>Program Studi</th>
+            <td>Sistem Informasi</td>
+          </tr>
+        </table>
 
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- TENTANG PROYEK -->
-  <section class="reveal">
-    <h2>Tentang Proyek</h2>
-    <p>
-      Web GIS Profil Desa dan Kecamatan ini dikembangkan sebagai
-      bagian dari proyek akademik yang bertujuan untuk
-      menerapkan konsep Sistem Informasi Geografis berbasis web.
-    </p>
-    <p>
-      Sistem ini menyajikan informasi spasial wilayah desa dan
-      kecamatan secara interaktif sebagai media pendukung
-      pembelajaran, analisis wilayah, dan penyediaan informasi
-      publik.
-    </p>
-  </section>
+    <!-- TENTANG PROYEK -->
+    <section class="reveal">
+      <h2>Tentang Proyek</h2>
+      <p>
+        Web GIS Profil Desa dan Kecamatan ini dikembangkan sebagai
+        bagian dari proyek akademik yang bertujuan untuk
+        menerapkan konsep Sistem Informasi Geografis berbasis web.
+      </p>
+      <p>
+        Sistem ini menyajikan informasi spasial wilayah desa dan
+        kecamatan secara interaktif sebagai media pendukung
+        pembelajaran, analisis wilayah, dan penyediaan informasi
+        publik.
+      </p>
+    </section>
 
-  <!-- TEKNOLOGI -->
-  <section class="reveal">
-    <h2>Teknologi yang Digunakan</h2>
-    <ul>
-      <li>HTML5 & CSS3</li>
-      <li>JavaScript</li>
-      <li>Leaflet.js (Web GIS)</li>
-      <li>QGIS & qgis2web</li>
-      <li>GitHub Pages</li>
-    </ul>
-  </section>
+    <!-- TEKNOLOGI -->
+    <section class="reveal">
+      <h2>Teknologi yang Digunakan</h2>
+      <ul>
+        <li>HTML5 & CSS3</li>
+        <li>JavaScript</li>
+        <li>Leaflet.js (Web GIS)</li>
+        <li>QGIS & qgis2web</li>
+        <li>GitHub Pages</li>
+      </ul>
+    </section>
 
-</main>
+  </main>
 
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer fade-up">
-  <p>© 2025 Web GIS Desa</p>
-  <p>Dikembangkan oleh Fadli Bachtiar</p>
-</footer>
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer fade-up">
+    <p>© 2025 Web GIS Desa</p>
+    <p>Dikembangkan oleh Fadli Bachtiar</p>
+  </footer>
 
-<!-- ================= SCROLL REVEAL ================= -->
-<script src="js/scroll.js"></script>
+  <!-- ================= SCROLL REVEAL ================= -->
+  <script src="js/scroll.js"></script>
 
 </body>
+
 </html>
