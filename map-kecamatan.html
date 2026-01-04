@@ -36,7 +36,7 @@
             <a href="desa-sokanegara/index.html">Sokanegara</a>
           </div>
         </div>
-        <a href="kecamatan/index.html" class="active">Map Kecamatan</a>
+        <a href="map-kecamatan.html" class="active">Map Kecamatan</a>
         <a href="tentang.html">Tentang</a>
       </div>
     </nav>
@@ -44,12 +44,11 @@
 
   <!-- ================= MAIN ================= -->
   <main class="content">
-
-
     <!-- PETA KECAMATAN -->
     <section class="reveal">
       <h2>Peta Wilayah Kecamatan</h2>
-      <div id="map"></div>
+      <iframe src="kecamatan/index.html" class="map-frame"
+        style="width: 100%; height: 80vh; border: none; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);"></iframe>
     </section>
 
   </main>
@@ -60,20 +59,6 @@
   </footer>
 
   <!-- ================= SCRIPT ================= -->
-  <!-- Leaflet -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-  <!-- CORE MAP (WAJIB) -->
-  <script src="js/map-core.js"></script>
-
-  <!-- CONFIG KHUSUS KECAMATAN -->
-  <script src="js/config-kecamatan.js"></script>
-
-  <!-- INISIALISASI MAP -->
-  <script>
-    initMap('map', kecamatanConfig);
-  </script>
-
   <!-- SCROLL REVEAL -->
   <script src="js/scroll.js"></script>
 
