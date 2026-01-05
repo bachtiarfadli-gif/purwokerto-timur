@@ -9,7 +9,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([12161063.650639, -828715.225680, 12162183.231063, -828138.402690], map.getSize());
+map.getView().fit([12157365.847928, -829868.926520, 12166322.491323, -825254.423309], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -513,7 +513,7 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 //layer search
 
 var searchLayer = new SearchLayer({
-    layer: lyr_Pemerintahan_20,
+    layer: lyr_Pemerintahan_21,
     colName: 'Nama',
     zoom: 10,
     collapsed: true,
@@ -529,6 +529,23 @@ document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'S
 
 
 //layerswitcher
+
+var layerSwitcher = new ol.control.LayerSwitcher({
+    activationMode: 'click',
+	startActive: true,
+	tipLabel: "Layers",
+    target: 'top-right-container',
+	collapseLabel: '»',
+	collapseTipLabel: 'Close'
+    });
+map.addControl(layerSwitcher);
+if (hasTouchScreen || isSmallScreen) {
+	document.addEventListener('DOMContentLoaded', function() {
+		setTimeout(function() {
+			layerSwitcher.hidePanel();
+		}, 500);
+	});	
+}
 
 
 

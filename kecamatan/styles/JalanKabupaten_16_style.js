@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_JalanGang_14 = function(feature, resolution){
+var style_JalanKabupaten_16 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -9,7 +9,7 @@ var style_JalanGang_14 = function(feature, resolution){
     
     var labelText = ""; 
     var value = feature.get("");
-    var labelFont = "13.0px \'Open Sans\', sans-serif";
+    var labelFont = "19.5px \'Open Sans\', sans-serif";
     var labelFill = "#323232";
     var bufferColor = "";
     var bufferWidth = 0;
@@ -21,7 +21,7 @@ var style_JalanGang_14 = function(feature, resolution){
         labelText = String(feature.get("Nama"));
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(24,0,236,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 1.9}),
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.42}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)

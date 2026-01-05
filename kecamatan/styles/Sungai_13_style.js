@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_JalanGang_14 = function(feature, resolution){
+var style_Sungai_13 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -21,7 +21,7 @@ var style_JalanGang_14 = function(feature, resolution){
         labelText = String(feature.get("Nama"));
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(24,0,236,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 1.9}),
+        stroke: new ol.style.Stroke({color: 'rgba(190,178,151,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
