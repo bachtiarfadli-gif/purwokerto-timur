@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/MarkerCluster.css">
         <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <style>
         html, body, #map {
@@ -38,6 +39,7 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
+        <script src="js/leaflet-search.js"></script>
         <script src="data/Nama_Sokanegara_1.js"></script>
         <script src="data/Nama_PurwokertoWetan_2.js"></script>
         <script src="data/Nama_PurwokertoLor_3.js"></script>
@@ -1904,6 +1906,16 @@
               addLabel(layer, i);
               i++;
         });
+        map.addControl(new L.Control.Search({
+            layer: cluster_Lapangan_9,
+            initial: false,
+            hideMarkerOnCollapse: true,
+            propertyName: 'Nama'}));
+        if (typeof url === 'undefined') {
+            document.getElementsByClassName('search-button')[0].className += ' fa fa-binoculars';
+        } else {
+            document.getElementsByClassName('search-button')[1].className += ' fa fa-binoculars';
+        }
         resetLabels([layer_Nama_Sokanegara_1,layer_Nama_PurwokertoWetan_2,layer_Nama_PurwokertoLor_3,layer_Nama_Mersi_4,layer_Nama_Kranji_5,layer_Nama_Arcawinangun_6,layer_Sawah_7,layer_Makam_8,layer_Lapangan_9,layer_Kebun_10,layer_Sungai_12,layer_JalanKabupaten_13,layer_JalanGang_14,layer_JalanDesa_15,layer_TempatIbadah_16,layer_Shop_17,layer_Penginapan_18,layer_Pendidikan_19,layer_Pemerintahan_20]);
         map.on("zoomend", function(){
             resetLabels([layer_Nama_Sokanegara_1,layer_Nama_PurwokertoWetan_2,layer_Nama_PurwokertoLor_3,layer_Nama_Mersi_4,layer_Nama_Kranji_5,layer_Nama_Arcawinangun_6,layer_Sawah_7,layer_Makam_8,layer_Lapangan_9,layer_Kebun_10,layer_Sungai_12,layer_JalanKabupaten_13,layer_JalanGang_14,layer_JalanDesa_15,layer_TempatIbadah_16,layer_Shop_17,layer_Penginapan_18,layer_Pendidikan_19,layer_Pemerintahan_20]);
