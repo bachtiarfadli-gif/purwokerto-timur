@@ -28,7 +28,6 @@
       <div class="nav-menu fade-right">
         <a href="index.html">Beranda</a>
         <div class="dropdown">
-          <a href="map-desa.html" class="active">Map Desa</a>
           <div class="dropdown-content">
             <a href="desa-kranji/index.html">Kranji</a>
             <a href="desa-pwtlor/index.html">Purwokerto Lor</a>
@@ -41,71 +40,4 @@
       </div>
     </nav>
   </header>
-
-  <!-- ================= MAIN ================= -->
-  <main class="content">
-
-    <!-- PROFIL DESA -->
-    <section id="profil-desa" class="reveal">
-      <h2>Profil Desa</h2>
-      <p>
-        Desa <strong>Sokanegara</strong> merupakan salah satu desa yang
-        berada di wilayah Kecamatan <strong>Purwokerto Timur</strong>,
-        Kabupaten <strong>Banyumas</strong>.
-      </p>
-      <p>
-        Wilayah desa memiliki karakteristik permukiman, pertanian,
-        serta fasilitas umum yang mendukung aktivitas masyarakat.
-      </p>
-    </section>
-
-    <!-- DATA UMUM DESA -->
-    <section id="data-desa" class="reveal">
-      <h2>Data Umum Desa</h2>
-
-      <table class="data-table scale-in">
-        <tr>
-          <th>Luas Wilayah</th>
-          <td>± 1,16 km²</td>
-        </tr>
-        <tr>
-          <th>Jumlah Penduduk</th>
-          <td>1.635 Jiwa</td>
-        </tr>
-      </table>
-    </section>
-
-    <!-- PETA DESA -->
-    <section class="reveal">
-      <h2>Peta Wilayah Desa</h2>
-      <div id="map"></div>
-    </section>
-
-  </main>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer fade-up">
-    <p>© 2025 Web GIS Desa</p>
-  </footer>
-
-  <!-- ================= SCRIPT ================= -->
-  <!-- Leaflet -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-  <!-- CORE MAP (WAJIB) -->
-  <script src="js/map-core.js"></script>
-
-  <!-- CONFIG KHUSUS KELURAHAN -->
-  <script src="js/config-kelurahan.js"></script>
-
-  <!-- INISIALISASI MAP -->
-  <script>
-    initMap('map', kelurahanConfig);
-  </script>
-
-  <!-- SCROLL REVEAL -->
-  <script src="js/scroll.js"></script>
-
-</body>
-
 </html>
