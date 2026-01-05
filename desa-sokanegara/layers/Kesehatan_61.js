@@ -1,0 +1,1 @@
+var json_Kesehatan_61 = {"type":"FeatureCollection","name":"Kesehatan_61","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"id":1.0,"Nama":"Praktek perorangan dr. Sri Banun Sapardina"},"geometry":{"type":"Point","coordinates":[109.230089077198713,-7.419702677196085]}}]}
