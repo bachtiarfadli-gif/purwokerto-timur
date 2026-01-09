@@ -1,141 +1,183 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-         <nav class="navbar">
-      <div class="nav-brand fade-left">
-        <strong>Web GIS Desa</strong>
-      </div>
-      <div class="nav-menu fade-right">
-        <a href="index.html" class="active">Beranda</a>
-        <div class="dropdown">
-          <a>Map Desa</a>
-          <div class="dropdown-content">
-            <a href="desa-kranji/index.html">Kranji</a>
-            <a href="desa-pwtlor/index.html">Purwokerto Lor</a>
-            <a href="desa-pwtwetan/index.html">Purwokerto Wetan</a>
-            <a href="desa-sokanegara/index.html">Sokanegara</a>
-          </div>
-        </div>
-        <a href="map-kecamatan.html">Map Kecamatan</a>
-        <a href="tentang.html">Tentang</a>
-      </div>
-    </nav>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="./resources/ol.css">
-        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
-        <link rel="stylesheet" type="text/css" href="resources/horsey.min.css">
-        <link rel="stylesheet" type="text/css" href="resources/ol-search-layer.min.css">
-        <link href="resources/photon-geocoder-autocomplete.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
-        <link rel="stylesheet" href="./resources/qgis2web.css">
-<style>
-html, body {
-    background-color: #f4f7fb;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no,maximum-scale=1">
 
-.ol-control > * {
-    background-color: #f8f8f8!important;
-    color: #444444!important;
-    border-radius: 0px;
-}
+    <title>Web GIS Desa Sokanegara</title>
 
-.ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
-    color: #444444!important;
-}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-.search-layer-input-search {
-    background-color: #f8f8f8!important;
-}
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
-.ol-control > *:focus, .ol-control >*:hover {
-    background-color: rgba(248, 248, 248, 0.7)!important;
-} 
+    <!-- QGIS2Web / OpenLayers -->
+    <link rel="stylesheet" href="resources/ol.css">
+    <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+    <link rel="stylesheet" href="resources/horsey.min.css">
+    <link rel="stylesheet" href="resources/ol-search-layer.min.css">
+    <link rel="stylesheet" href="resources/photon-geocoder-autocomplete.min.css">
+    <link rel="stylesheet" href="resources/ol-layerswitcher.css">
+    <link rel="stylesheet" href="resources/qgis2web.css">
 
-.ol-control {
-    background-color: rgba(255,255,255,.4) !important;
-    padding: 2px !important;
-}
+    <!-- Custom Page Style -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fb;
+            display: flex;
+            flex-direction: column;
+        }
 
-/* Navbar Styles */
-.site-header {
-    position: relative;
-    flex-shrink: 0;
-    z-index: 9999 !important;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+        /* Header & Navbar */
+        .site-header {
+            position: relative;
+            z-index: 9999;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-.navbar {
-    position: relative;
-    z-index: 9999 !important;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 30px;
+        }
 
-/* Map Container */
-.map-container {
-    flex-grow: 1;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
+        .nav-brand {
+            font-size: 18px;
+            font-weight: 700;
+        }
 
-#map {
-    width: 100%;
-    height: 100%;
-    max-width: 1400px;
-    border-radius: 12px;
-    border: 5px solid white;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
-}
-</style>        <title></title>
-    </head>
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-menu a.active {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 120%;
+            left: 0;
+            background: #fff;
+            min-width: 180px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px 14px;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background: #f1f5f9;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Map Layout */
+        .map-container {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            border-radius: 14px;
+            border: 5px solid #fff;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+
 <body>
-    <!-- Header dengan Navbar -->
-    <header class="site-header">
-        <nav class="navbar">
-            <div class="nav-brand fade-left">
-                <strong>Web GIS Desa</strong>
-            </div>
-            <div class="nav-menu fade-right">
-                <a href="../index.html">Beranda</a>
-                <div class="dropdown">
-                    <a href="../map-desa.html" class="active">Map Desa</a>
-                    <div class="dropdown-content">
-                        <a href="../desa-kranji/index.html">Kranji</a>
-                        <a href="../desa-pwtlor/index.html">Purwokerto Lor</a>
-                        <a href="../desa-pwtwetan/index.html">Purwokerto Wetan</a>
-                        <a href="../desa-sokanegara/index.html">Sokanegara</a>
-                    </div>
-                </div>
-                <a href="../map-kecamatan.html">Map Kecamatan</a>
-                <a href="../tentang.html">Tentang</a>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Map Container -->
-    <div class="map-container">
-        <div id="map">
-            <div id="popup" class="ol-popup">
-                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                <div id="popup-content"></div>
+<!-- HEADER -->
+<header class="site-header">
+    <nav class="navbar">
+        <div class="nav-brand">Web GIS Desa</div>
+
+        <div class="nav-menu">
+            <a href="../index.html">Beranda</a>
+
+            <div class="dropdown">
+                <a class="active">Map Desa</a>
+                <div class="dropdown-content">
+                    <a href="../desa-kranji/index.html">Kranji</a>
+                    <a href="../desa-pwtlor/index.html">Purwokerto Lor</a>
+                    <a href="../desa-pwtwetan/index.html">Purwokerto Wetan</a>
+                    <a href="../desa-sokanegara/index.html">Sokanegara</a>
+                </div>
             </div>
+
+            <a href="../map-kecamatan.html">Map Kecamatan</a>
+            <a href="../tentang.html">Tentang</a>
+        </div>
+    </nav>
+</header>
+
+<!-- MAP -->
+<div class="map-container">
+    <div id="map">
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
         </div>
     </div>
+</div>
 
-    <!-- Sisanya tetap sama (semua script tags) --></html>
+<!-- QGIS2Web Scripts -->
+<script src="resources/qgis2web_expressions.js"></script>
+<script src="resources/polyfills.js"></script>
+<script src="resources/functions.js"></script>
+<script src="resources/ol.js"></script>
+<script src="resources/ol-search-layer.min.js"></script>
+<script src="resources/ol-layerswitcher.js"></script>
+
+<script src="layers/layers.js"></script>
+<script src="styles/style.js"></script>
+<script src="data/data.js"></script>
+
+<script>
+    var map = new ol.Map({
+        target: 'map',
+        layers: layersList,
+        view: new ol.View({
+            center: ol.proj.fromLonLat([109.240, -7.427]),
+            zoom: 15
+        })
+    });
+</script>
+
+</body>
+</html>
