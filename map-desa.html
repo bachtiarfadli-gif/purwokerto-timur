@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,37 +9,49 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-
   <!-- Global CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-    <nav class="navbar">
-      <div class="nav-brand fade-left">
-        <strong>Web GIS Desa</strong>
-      </div>
-      <div class="nav-menu fade-right">
-        <a href="index.html">Beranda</a>
-       <div class="dropdown">
-  <span class="dropdown-title">Map Desa</span>
-  <div class="dropdown-content">
-    <a href="desa-kranji/index.html">Kranji</a>
-    <a href="desa-pwtlor/index.html">Purwokerto Lor</a>
-    <a href="desa-pwtwetan/index.html">Purwokerto Wetan</a>
-    <a href="desa-sokanegara/index.html">Sokanegara</a>
+<header class="site-header">
+  <nav class="navbar">
+    <div class="nav-brand fade-left">
+      <strong>Web GIS Desa</strong>
+    </div>
+    <div class="nav-menu fade-right">
+      <a href="index.html">Beranda</a>
+<div class="dropdown">
+  <a href="#" class="active">Map Desa ▾</a>
+  <div class="dropdown-menu">
+    <a href="map-desa.html">Sokanegara</a>
+    <a href="map-desa-purwokerto-lor.html">Purwokerto Lor</a>
+    <a href="map-desa-purwokerto-wetan.html">Purwokerto Wetan</a>
+    <a href="map-desa-kranji.html">Kranji</a>
   </div>
 </div>
-        </div>
-        <a href="map-kecamatan.html">Map Kecamatan</a>
-        <a href="tentang.html">Tentang</a>
-      </div>
-    </nav>
-  </header>
-</html>
+      <a href="map-kecamatan.html">Map Kecamatan</a>
+      <a href="tentang.html">Tentang</a>
+    </div>
+  </nav>
+</header>
 
+<main class="content">
+
+  <!-- PETA QGIS2WEB -->
+  <section class="reveal">
+    <h2>Peta Wilayah Desa</h2>
+
+<iframe 
+  src="peta/sokanegara/index.html"
+  style="width:100%; height:600px; border:none; border-radius:12px;"
+  loading="lazy">
+</iframe>
+  </section>
+</main>
+
+<footer class="site-footer fade-up">
+  <p>© 2025 Web GIS Desa</p>
+</footer>
+</body>
+</html>

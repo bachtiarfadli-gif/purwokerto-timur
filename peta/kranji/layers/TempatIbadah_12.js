@@ -1,0 +1,1 @@
+var json_TempatIbadah_12 = {"type":"FeatureCollection","name":"TempatIbadah_12","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"id":"1","Nama":"Masjid Arafah","layer":null,"path":null},"geometry":{"type":"Point","coordinates":[109.233948686346665,-7.428218183562392]}}]}
