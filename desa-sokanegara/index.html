@@ -1,125 +1,46 @@
 <!doctype html>
 <html lang="id">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no,maximum-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Web GIS Desa Sokanegara</title>
+<title>Web GIS Desa Sokanegara</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+<!-- CSS GLOBAL (INI YANG FIX) -->
+<link rel="stylesheet" href="../css/style.css">
 
-    <!-- QGIS2Web / OpenLayers -->
-    <link rel="stylesheet" href="resources/ol.css">
-    <link rel="stylesheet" href="resources/fontawesome-all.min.css">
-    <link rel="stylesheet" href="resources/horsey.min.css">
-    <link rel="stylesheet" href="resources/ol-search-layer.min.css">
-    <link rel="stylesheet" href="resources/photon-geocoder-autocomplete.min.css">
-    <link rel="stylesheet" href="resources/ol-layerswitcher.css">
-    <link rel="stylesheet" href="resources/qgis2web.css">
+<!-- QGIS2WEB -->
+<link rel="stylesheet" href="resources/ol.css">
+<link rel="stylesheet" href="resources/fontawesome-all.min.css">
+<link rel="stylesheet" href="resources/ol-layerswitcher.css">
+<link rel="stylesheet" href="resources/qgis2web.css">
 
-    <!-- Custom Page Style -->
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f7fb;
-            display: flex;
-            flex-direction: column;
-        }
+<style>
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
 
-        /* Header & Navbar */
-        .site-header {
-            position: relative;
-            z-index: 9999;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+.site-header {
+    position: relative;
+    z-index: 9999;
+}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 30px;
-        }
+.map-container {
+    height: calc(100vh - 70px);
+}
 
-        .nav-brand {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .nav-menu a.active {
-            color: #2563eb;
-            font-weight: 600;
-        }
-
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 120%;
-            left: 0;
-            background: #fff;
-            min-width: 180px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            border-radius: 8px;
-            overflow: hidden;
-            z-index: 9999;
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 10px 14px;
-            color: #333;
-            white-space: nowrap;
-        }
-
-        .dropdown-content a:hover {
-            background: #f1f5f9;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Map Layout */
-        .map-container {
-            flex-grow: 1;
-            padding: 20px;
-        }
-
-        #map {
-            width: 100%;
-            height: 100%;
-            border-radius: 14px;
-            border: 5px solid #fff;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-        }
-    </style>
+#map {
+    width: 100%;
+    height: 100%;
+}
+</style>
 </head>
-
+ 
 <body>
 
 <!-- HEADER -->
