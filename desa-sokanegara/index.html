@@ -1,95 +1,66 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- QGIS2WEB / OpenLayers CSS -->
-    <link rel="stylesheet" href="./resources/ol.css">
-    <link rel="stylesheet" href="resources/fontawesome-all.min.css">
-    <link rel="stylesheet" href="resources/horsey.min.css">
-    <link rel="stylesheet" href="resources/ol-search-layer.min.css">
-    <link rel="stylesheet" href="resources/photon-geocoder-autocomplete.min.css">
-    <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
-    <link rel="stylesheet" href="./resources/qgis2web.css">
+<link rel="stylesheet" href="./resources/ol.css">
+<link rel="stylesheet" href="./resources/qgis2web.css">
 
-    <!-- NAVBAR + LAYOUT FIX -->
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Poppins, Arial, sans-serif;
-        }
+<style>
+/* RESET */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Poppins, Arial, sans-serif;
+}
 
-        /* ===== NAVBAR ===== */
-        header {
-            position: sticky;
-            top: 0;
-            height: 56px;
-            background: #1f3b5b;
-            color: #fff;
-            z-index: 10000;
-        }
+/* ===== NAVBAR ===== */
+header {
+    height: 56px;
+    background: #1f3b5b;
+    color: #fff;
+}
 
-        .navbar {
-            max-width: 1400px;
-            margin: 0 auto;
-            height: 100%;
-            padding: 0 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+.navbar {
+    height: 100%;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .nav-brand {
-            font-weight: 700;
-        }
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 16px;
+    font-weight: 500;
+}
 
-        .nav-menu a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 16px;
-            font-weight: 500;
-        }
+.navbar a.active {
+    text-decoration: underline;
+}
 
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            text-decoration: underline;
-        }
+/* ===== MAP WRAPPER (INI KUNCI UTAMA) ===== */
+#map-wrapper {
+    height: calc(100vh - 56px);
+}
 
-        /* ===== MAP ===== */
-        #map {
-            width: 100%;
-            height: calc(100vh - 56px);
-        }
-
-        /* OpenLayers control style (tetap dari qgis2web) */
-        .ol-control > * {
-            background-color: #f8f8f8!important;
-            color: #444!important;
-            border-radius: 0;
-        }
-
-        .ol-control {
-            background-color: rgba(255,255,255,.4)!important;
-            padding: 2px!important;
-        }
-    </style>
-
-    <title>Web GIS Desa Sokanegara</title>
+/* qgis2web butuh #map full container */
+#map {
+    width: 100%;
+    height: 100%;
+}
+</style>
 </head>
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
 <header>
     <nav class="navbar">
-        <div class="nav-brand">Web GIS Desa</div>
-        <div class="nav-menu">
+        <div><strong>Web GIS Desa</strong></div>
+        <div>
             <a href="../index.html">Beranda</a>
             <a href="../map-desa.html" class="active">Map Desa</a>
             <a href="../map-kecamatan.html">Map Kecamatan</a>
@@ -97,71 +68,19 @@
     </nav>
 </header>
 
-<!-- ===== MAP ===== -->
-<div id="map">
-    <div id="popup" class="ol-popup">
-        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-        <div id="popup-content"></div>
+<!-- ⬇️ MAP HARUS DI DALAM WRAPPER -->
+<div id="map-wrapper">
+    <div id="map">
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
+        </div>
     </div>
 </div>
 
-<!-- ===== SCRIPTS (ASLI QGIS2WEB, TIDAK DIUBAH) ===== -->
-<script src="resources/qgis2web_expressions.js"></script>
-<script src="./resources/functions.js"></script>
+<!-- SCRIPT QGIS2WEB (TIDAK DIUBAH) -->
 <script src="./resources/ol.js"></script>
-<script src="resources/horsey.min.js"></script>
-<script src="resources/ol-search-layer.js"></script>
-<script src="./resources/ol-layerswitcher.js"></script>
-<script src="resources/photon-geocoder-autocomplete.min.js"></script>
-
-<script src="layers/rt_rw_RW3_RT2_2.js"></script>
-<script src="layers/rt_rw_RW3_RT3_3.js"></script>
-<script src="layers/rt_rw_RW3_RT4_4.js"></script>
-<script src="layers/rt_rw_RW4_RT1_5.js"></script>
-<script src="layers/rt_rw_RW4_RT2_6.js"></script>
-<script src="layers/rt_rw_RW1_RT1_7.js"></script>
-<script src="layers/rt_rw_RW1_RT2_8.js"></script>
-<script src="layers/rt_rw_RW1_RT3_9.js"></script>
-<script src="layers/rt_rw_RW1_RT4_10.js"></script>
-<script src="layers/rt_rw_RW1_RT5_11.js"></script>
-<script src="layers/rt_rw_RW2_RT1_12.js"></script>
-<script src="layers/rt_rw_RW2_RT2_13.js"></script>
-<script src="layers/rt_rw_RW4_RT3_14.js"></script>
-<script src="layers/rt_rw_RW4_RT4_15.js"></script>
-<script src="layers/rt_rw_RW5_RT1_16.js"></script>
-<script src="layers/rt_rw_RW5_RT2_17.js"></script>
-<script src="layers/rt_rw_RW5_RT3_18.js"></script>
-<script src="layers/rt_rw_RW5_RT4_19.js"></script>
-<script src="layers/rt_rw_RW5_RT7_20.js"></script>
-<script src="layers/rt_rw_RW5_RT8_21.js"></script>
-<script src="layers/rt_rw_RW6_RT2_22.js"></script>
-<script src="layers/rt_rw_RW6_RT3_23.js"></script>
-<script src="layers/rt_rw_RW6_RT4_24.js"></script>
-<script src="layers/rt_rw_RW6_RT5_25.js"></script>
-<script src="layers/rt_rw_RW6_RT7_26.js"></script>
-<script src="layers/rt_rw_RW7_RT1_27.js"></script>
-<script src="layers/rt_rw_RW7_RT2_28.js"></script>
-<script src="layers/rt_rw_RW7_RT4_29.js"></script>
-<script src="layers/rt_rw_RW8_RT1_30.js"></script>
-<script src="layers/rt_rw_RW8_RT2_31.js"></script>
-<script src="layers/rt_rw_RW8_RT3_32.js"></script>
-<script src="layers/rt_rw_RW8_RT4_33.js"></script>
-<script src="layers/rt_rw_RW9_RT1_34.js"></script>
-<script src="layers/rt_rw_RW9_RT2_35.js"></script>
-<script src="layers/rt_rw_RW9_RT3_36.js"></script>
-<script src="layers/rt_rw_RW9_RT4_37.js"></script>
-<script src="layers/rt_rw_RW10_RT1_38.js"></script>
-<script src="layers/rt_rw_RW10_RT2_39.js"></script>
-<script src="layers/rt_rw_RW11_RT1_40.js"></script>
-<script src="layers/rt_rw_RW11_RT2_41.js"></script>
-<script src="layers/rt_rw_RW12_RT3_42.js"></script>
-<script src="layers/rt_rw_RW12_RT2_43.js"></script>
-<script src="layers/rt_rw_RW11_RT3_44.js"></script>
-<script src="layers/rt_rw_RW11_RT4_45.js"></script>
-<script src="layers/rt_rw_RW12_RT1_46.js"></script>
-
 <script src="./layers/layers.js"></script>
-<script src="./resources/Autolinker.min.js"></script>
 <script src="./resources/qgis2web.js"></script>
 
 </body>
