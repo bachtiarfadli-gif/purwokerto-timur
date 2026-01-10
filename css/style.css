@@ -1,4 +1,4 @@
-/* ================= RESET & FONT ================= */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -7,18 +7,16 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f7fb;
+  background: #f4f7fb;
   color: #333;
   line-height: 1.7;
 }
 
-/* ================= HEADER & NAVBAR ================= */
+/* ================= NAVBAR ================= */
 .site-header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 64px;
   background: #1f3a5f;
   z-index: 9999;
 }
@@ -26,345 +24,10 @@ body {
 .navbar {
   max-width: 1200px;
   margin: auto;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px;
-}
-
-.nav-brand {
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-}
-
-.nav-menu {
-  display: flex;
-  align-items: center;
-}
-
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  margin-left: 22px;
-  font-weight: 500;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
-  color: #2ecc71;
-}
-
-/* ================= DROPDOWN NAVBAR ================= */
-.dropdown {
-  position: relative;
-}
-
-.dropdown > a {
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 120%;
-  right: 0;
-  background: #ffffff;
-  min-width: 220px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.2s ease;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 12px 16px;
-  color: #333;
-  font-size: 14px;
-}
-
-.dropdown-menu a:hover {
-  background: #f2f5f9;
-  color: #1f3a5f;
-}
-
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  top: 100%;
-}
-
-/* ================= MAIN CONTENT ================= */
-.content {
-  max-width: 1100px;
-  margin: auto;
-  padding: 100px 20px 60px; /* aman untuk navbar fixed */
-}
-
-section {
-  margin-bottom: 60px;
-}
-
-h2, h3 {
-  color: #1f3a5f;
-  margin-bottom: 12px;
-}
-
-p {
-  margin-bottom: 10px;
-}
-
-/* ================= HERO ================= */
-.hero {
-  min-height: 20vh;
-  margin-top: 64px;            /* ⬅️ PENTING: kompensasi navbar fixed */
-
-  background:
-    linear-gradient(rgba(31,58,95,0.75), rgba(31,58,95,0.85)),
-    url("../assets/img/Screenshot_2025-09-28-09-55-29-237_comandroidchrome-603266400.png");
-
-  background-size: cover;
-  background-position: center;
-  background-attachment: scroll;
-  position: relative;
-
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-}
-.hero {
-  min-height: calc(20vh + 64px);
-  padding-top: 64px;
-}
-
-
-/* ================= TABLE ================= */
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.data-table th,
-.data-table td {
-  padding: 14px 18px;
-  border-bottom: 1px solid #eee;
-  text-align: left;
-}
-
-.data-table th {
-  background: #f1f5f9;
-  width: 35%;
-  color: #1f3a5f;
-}
-
-/* ================= CARD MENU ================= */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-.menu-card {
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  text-decoration: none;
-  color: #333;
-}
-
-.menu-card h3 {
-  margin-bottom: 10px;
-}
-
-/* ================= MAP (IFRAME) ================= */
-.map-wrapper {
-  width: 100%;
-  height: 90vh;
-  border: 10px solid #1f3a5f;
-  border-radius: 18px;
-  background: #fff;
-  padding: 10px;                 /* ruang di dalam frame */
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-.map-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-
-
-.map-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ================= FOOTER ================= */
-.site-footer {
-  background: #1f3a5f;
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
-  font-size: 14px;
-}
-
-/* ================= SAFETY ================= */
-iframe {
-  pointer-events: auto;
-}
-
-.site-header {
-  pointer-events: auto;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 10px 20px;
-  }
-
-  .nav-menu {
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
-
-  .nav-menu a {
-    margin: 8px 15px 0 0;
-  }
-
-  .content {
-    padding-top: 120px;
-  }
-}
-/* ===== OVERRIDE KHUSUS HALAMAN PETA ===== */
-.section-map {
-  max-width: 100%;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-}
-/* ===== RAPATKAN JUDUL KE PETA ===== */
-.section-map {
-  margin-top: -10px;   /* naikkan peta */
-}
-.section-map h2 {
-  margin-bottom: 5px;
-}
-/* ===== BANNER SCROLL NORMAL ===== */
-.hero {
-  position: relative;              /* BUKAN fixed */
-  background-attachment: scroll;   /* BUKAN fixed */
-}
-.hero {
-  will-change: transform;
-}
-@media (max-width: 768px) {
-
-  .site-header {
-    height: auto;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 10px 16px;
-  }
-
-  .nav-brand {
-    margin-bottom: 8px;
-  }
-
-  .nav-menu {
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .nav-menu a {
-    margin: 6px 12px 6px 0;
-    font-size: 14px;
-  }
-
-}
-@media (max-width: 768px) {
-
-  .hero {
-    margin-top: 96px;        /* navbar di HP lebih tinggi */
-    min-height: auto;
-    padding: 32px 16px;
-  }
-
-  .hero h1 {
-    font-size: 20px;
-    line-height: 1.3;
-  }
-
-}
-/* ===== DROPDOWN FIX KHUSUS MOBILE ===== */
-@media (max-width: 768px) {
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .dropdown-menu {
-    position: static;        /* ⬅️ bukan absolute */
-    width: 100%;
-    min-width: unset;
-    box-shadow: none;
-    border-radius: 0;
-    margin-top: 6px;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    display: none;           /* ⬅️ disembunyikan default */
-  }
-
-  /* tampil saat tap (hover fallback mobile) */
-  .dropdown:active .dropdown-menu,
-  .dropdown:focus-within .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu a {
-    padding: 12px 16px;
-    border-bottom: 1px solid #eee;
-  }
-
-}
-.dropdown-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font: inherit;
-  cursor: pointer;
-}
-/* ================= NAVBAR BASE ================= */
-.site-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1f3a5f;
-  z-index: 9999;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-brand {
@@ -374,15 +37,14 @@ iframe {
 
 .nav-menu {
   display: flex;
-  align-items: center;
   gap: 18px;
 }
 
 .nav-menu a,
 .dropdown-toggle {
-  color: white;
   background: none;
   border: none;
+  color: white;
   font: inherit;
   cursor: pointer;
 }
@@ -417,7 +79,62 @@ iframe {
   display: block;
 }
 
-/* ================= MOBILE MODE ================= */
+/* ================= HERO ================= */
+.hero {
+  margin-top: 64px;          /* kompensasi navbar */
+  min-height: 20vh;
+  padding: 40px 20px;
+  background:
+    linear-gradient(rgba(31,58,95,0.75), rgba(31,58,95,0.85)),
+    url("../assets/img/Screenshot_2025-09-28-09-55-29-237_comandroidchrome-603266400.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ================= CONTENT ================= */
+.content {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px 60px;
+}
+
+/* ================= MAP ================= */
+.section-map {
+  max-width: 100%;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-top: -20px;
+}
+
+.map-wrapper {
+  height: 90vh;
+  border: 6px solid #1f3a5f;
+  border-radius: 18px;
+  padding: 6px;
+  background: white;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ================= FOOTER ================= */
+.site-footer {
+  background: #1f3a5f;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
   .navbar {
@@ -426,8 +143,8 @@ iframe {
   }
 
   .nav-menu {
-    flex-direction: column;
     width: 100%;
+    flex-direction: column;
     gap: 10px;
     margin-top: 10px;
   }
@@ -437,10 +154,16 @@ iframe {
     box-shadow: none;
     border-radius: 0;
     width: 100%;
+    display: none;
   }
 
   .dropdown:focus-within .dropdown-menu {
     display: block;
+  }
+
+  .hero {
+    margin-top: 96px;
+    padding: 32px 16px;
   }
 
 }
