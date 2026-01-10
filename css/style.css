@@ -312,3 +312,35 @@ iframe {
   }
 
 }
+/* ===== DROPDOWN FIX KHUSUS MOBILE ===== */
+@media (max-width: 768px) {
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;        /* ⬅️ bukan absolute */
+    width: 100%;
+    min-width: unset;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 6px;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;           /* ⬅️ disembunyikan default */
+  }
+
+  /* tampil saat tap (hover fallback mobile) */
+  .dropdown:active .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+  }
+
+}
