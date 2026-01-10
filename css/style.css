@@ -270,3 +270,45 @@ iframe {
 .hero {
   will-change: transform;
 }
+@media (max-width: 768px) {
+
+  .site-header {
+    height: auto;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 16px;
+  }
+
+  .nav-brand {
+    margin-bottom: 8px;
+  }
+
+  .nav-menu {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu a {
+    margin: 6px 12px 6px 0;
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .hero {
+    margin-top: 96px;        /* navbar di HP lebih tinggi */
+    min-height: auto;
+    padding: 32px 16px;
+  }
+
+  .hero h1 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+}
